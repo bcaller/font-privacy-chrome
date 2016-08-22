@@ -1,0 +1,22 @@
+{
+    "name": "Font Privacy",
+    "description": "Stop your fonts from being fingerprinted. Protect your privacy by hiding non-standard fonts.",
+    "version": "0.11",
+	"author": "Ben Caller",
+	"homepage_url": "https://github.com/bcaller/font-privacy-chrome",
+    "permissions": [
+		"tabs","<all_urls>","webRequest","webRequestBlocking"
+    ],
+    "content_scripts": [
+        {
+        "matches": [
+            "http://*/*",
+            "https://*/*"
+            ],
+        "js": ["content.js"],
+        "run_at": "document_start",
+		"all_frames": true
+        }
+    ],
+    "manifest_version":2
+}
